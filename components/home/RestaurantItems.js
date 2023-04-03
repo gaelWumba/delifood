@@ -39,6 +39,7 @@ export default function RestaurantItems({ navigation, ...props }) {
     <>
       {props.restaurantData.map((restaurant, index) => (
         <TouchableOpacity 
+          key={index}
           activeOpacity={1} 
           style={{ marginBottom: 10 }}
           onPress={() => navigation.navigate('RestaurantDetails', {
@@ -51,7 +52,7 @@ export default function RestaurantItems({ navigation, ...props }) {
           })}
           
         >
-          <View key={index} style={{ marginTop: 10, padding: 10, backgroundColor: 'white' }}>
+          <View style={{ marginTop: 10, padding: 10, backgroundColor: 'white' }}>
             <RestaurantImage image={restaurant.image_url} />
             <RestaurantInfo name={restaurant.name} rating={restaurant.rating} />
           </View>
